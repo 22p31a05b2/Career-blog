@@ -1,0 +1,11 @@
+{% include "home.html" %}
+
+<h2 class="mb-3">Add New Post</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<a href="{% url 'home' %}" class="btn btn-secondary mt-2">← Back to Home</a>

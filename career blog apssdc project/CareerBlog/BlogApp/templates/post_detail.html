@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+            
+                <h1 class="card-title text-primary text-center mt-4 mx-4">{{ post.title }}</h1>
+
+                <div class="ms-auto" style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <p class="text-secondary mb-1">
+                <strong>Category:</strong> {{ post.category }}
+                </p>
+                <p class="text-muted fst-italic">
+                 By {{ post.author }} on {{ post.published_date }}
+                </p>
+                </div>
+
+                
+                <div class="mt-4 mx-4">
+                    <div class="content fs-6 lh-lg">
+                        {{ post.content|safe }}
+                    </div>
+                </div>
+
+                
+                <a href="{% url 'home' %}" class="btn btn-secondary mt-4">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
